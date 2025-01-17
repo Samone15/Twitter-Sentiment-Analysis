@@ -18,7 +18,7 @@ def predict():
         transformed_tweet = vectorizer.transform([tweet])
         prediction = model.predict(transformed_tweet)[0]
         
-        sentiment = "Positive" if prediction == 1 else "Negative"
+        sentiment = "Offensive" if prediction == 1 else "Normal"
         
         return render_template('index.html', tweet=tweet, sentiment=sentiment)
 
